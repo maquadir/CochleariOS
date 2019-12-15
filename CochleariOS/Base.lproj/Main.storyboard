@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,135 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CochleariOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-57" y="130"/>
+        </scene>
+        <!--Detail Screen-->
+        <scene sceneID="JID-CV-0Hg">
+            <objects>
+                <viewController storyboardIdentifier="detailscreen" id="ZBm-cb-7ub" customClass="DetailScreen" customModule="CochleariOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6jQ-5C-SZD" customClass="De">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dFO-tA-SuF">
+                                <rect key="frame" x="62" y="346" width="290" height="204.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdQ-Fj-zhG">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="42.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter notes.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dZa-jz-ZBD">
+                                        <rect key="frame" x="0.0" y="52.5" width="290" height="112"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BFQ-30-ZIv">
+                                        <rect key="frame" x="0.0" y="174.5" width="290" height="30"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="PQR-6y-009">
+                                <rect key="frame" x="110" y="570.5" width="194" height="55"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F18-UH-j5a">
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="55"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="35"/>
+                                        <state key="normal" title="save">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButton:" destination="ZBm-cb-7ub" eventType="touchUpInside" id="Pog-nP-qGc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0to-0n-SLD">
+                                        <rect key="frame" x="101" y="0.0" width="93" height="55"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="35"/>
+                                        <state key="normal" title="cancel">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="ZBm-cb-7ub" eventType="touchUpInside" id="2Aq-zZ-mos"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dFO-tA-SuF" firstAttribute="centerY" secondItem="6jQ-5C-SZD" secondAttribute="centerY" id="Tl1-HM-MCH"/>
+                            <constraint firstItem="dFO-tA-SuF" firstAttribute="width" secondItem="p5u-b1-dRL" secondAttribute="width" multiplier="0.7:1" id="Y69-rY-fBC"/>
+                            <constraint firstItem="dFO-tA-SuF" firstAttribute="height" secondItem="p5u-b1-dRL" secondAttribute="height" multiplier="0.25:1" id="atd-Vt-jnW"/>
+                            <constraint firstItem="PQR-6y-009" firstAttribute="centerX" secondItem="6jQ-5C-SZD" secondAttribute="centerX" id="mPy-aN-BZc"/>
+                            <constraint firstItem="PQR-6y-009" firstAttribute="top" secondItem="dFO-tA-SuF" secondAttribute="bottom" constant="20" id="pH0-et-y5J"/>
+                            <constraint firstItem="dFO-tA-SuF" firstAttribute="centerX" secondItem="6jQ-5C-SZD" secondAttribute="centerX" id="uET-Ws-9VA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="p5u-b1-dRL"/>
+                    </view>
+                    <connections>
+                        <outlet property="locationLabel" destination="BFQ-30-ZIv" id="s57-PT-gDr"/>
+                        <outlet property="titleLabel" destination="mdQ-Fj-zhG" id="7fr-mQ-80J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W6H-6Z-3Cg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="789.85507246376812" y="122.54464285714285"/>
+        </scene>
+        <!--List Screen-->
+        <scene sceneID="6FT-3x-N1V">
+            <objects>
+                <viewController storyboardIdentifier="listscreen" id="rdJ-ic-BEl" customClass="ListScreen" customModule="CochleariOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PWc-YJ-bPx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lJs-C0-5ld">
+                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U14-eD-1yj">
+                                <rect key="frame" x="367" y="54" width="37" height="30"/>
+                                <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="closeScreen:" destination="rdJ-ic-BEl" eventType="touchUpInside" id="xga-wg-Z7q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5bq-9N-znf" firstAttribute="trailing" secondItem="lJs-C0-5ld" secondAttribute="trailing" id="6qX-5K-cps"/>
+                            <constraint firstItem="5bq-9N-znf" firstAttribute="trailing" secondItem="U14-eD-1yj" secondAttribute="trailing" constant="10" id="7bH-kQ-0yR"/>
+                            <constraint firstItem="lJs-C0-5ld" firstAttribute="centerX" secondItem="PWc-YJ-bPx" secondAttribute="centerX" id="TGI-uv-ksZ"/>
+                            <constraint firstItem="lJs-C0-5ld" firstAttribute="top" secondItem="5bq-9N-znf" secondAttribute="top" constant="30" id="eD3-oQ-jro"/>
+                            <constraint firstItem="U14-eD-1yj" firstAttribute="top" secondItem="5bq-9N-znf" secondAttribute="top" constant="10" id="hGj-sA-pGX"/>
+                            <constraint firstItem="lJs-C0-5ld" firstAttribute="leading" secondItem="5bq-9N-znf" secondAttribute="leading" id="i1r-HP-ERr"/>
+                            <constraint firstItem="5bq-9N-znf" firstAttribute="bottom" secondItem="lJs-C0-5ld" secondAttribute="bottom" id="kV9-8V-FLu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5bq-9N-znf"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="lJs-C0-5ld" id="7dS-Uz-Znf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X8B-yL-5c5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1655" y="115"/>
         </scene>
     </scenes>
 </document>

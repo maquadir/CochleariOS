@@ -60,5 +60,21 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Enable location Access</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Enable location access</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Enable location access</string>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+      <key>NSAllowsArbitraryLoads</key>
+      <true/>
+    </dict>
 </dict>
 </plist>
