@@ -32,10 +32,6 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     var customInfoWindow : CustomInfoWindow?
     
     //local array lists
-    var note: [String] = []
-    var info: [String] = []
-    var clocation: [CLLocationCoordinate2D] = []
-//    var List = [String: CLLocationCoordinate2D]()
     var List: [Data] = []
     
     //firebase db variable
@@ -163,10 +159,6 @@ class ViewController: UIViewController,GMSMapViewDelegate {
                     let location = CLLocationCoordinate2D(latitude: Double(lat) , longitude: Double(lng) )
                     
                     //add to array lists
-                    self.note.append(title)
-                    self.clocation.append(location)
-                    self.info.append("")
-                    
                     self.List.append(Data(title, location, "",0))
                 
                     //place markers based on locations fetched from JSON
@@ -196,23 +188,17 @@ class ViewController: UIViewController,GMSMapViewDelegate {
                if let err = err {
                    print("Error getting documents: \(err)")
                } else {
-                   let loc = "Location : "
                    for document in querySnapshot!.documents {
                        let lat = document.get("latitude").map(String.init(describing:)) ?? "nil"
                        let lon = document.get("longitude").map(String.init(describing:)) ?? "nil"
                        let title = document.get("title").map(String.init(describing:)) ?? "nil"
                        let info = document.get("note").map(String.init(describing:)) ?? "nil"
-                       let snippet = loc + lat + "," + lon
                        
                        //add a marker to tappped location
                        let marker = GMSMarker()
                        marker.position = CLLocationCoordinate2D(latitude: Double(lat)! , longitude: Double(lon)! )
                        marker.map = self.mapView
-                       
-                       self.note.append(title)
-                       self.info.append(info)
-                       self.clocation.append(marker.position)
-                    
+                   
                        self.List.append(Data(title, marker.position, info,0))
                    }
                }
@@ -249,9 +235,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
         detailScreen.modalPresentationStyle = .fullScreen
         
         //fetch the indeces
-        let index = clocation.index(where: {$0.latitude == marker.position.latitude && $0.longitude == marker.position.longitude}) // 0
-        let loc = "Location : "
-        let location = loc + String(marker.position.latitude) + "," + String(marker.position.longitude)
+        let index = List.firstIndex(where: {$0.location.latitude == marker.position.latitude && $0.location.longitude == marker.position.longitude}) // 0
         
         let lat = String(List[index!].location.latitude)
         let lon = String(List[index!].location.longitude)
@@ -271,7 +255,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
     
-       let position = tappedMarker?.position
+//       let position = tappedMarker?.position
 //     customInfoWindow?.center = mapView.projection.point(for: position!)
 //     customInfoWindow?.center.y -= 100
         
@@ -318,11 +302,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
               marker.snippet = snippet_text
               
               //append to variables
-              self.note.append(marker.title ?? "")
-              self.clocation.append(marker.position)
-              self.info.append("")
-                
-              self.List.append(Data(marker.title ?? "", marker.position, "",0))
+             self.List.append(Data(marker.title ?? "", marker.position, "",0))
               
               // Add a new document with a generated ID
               let docData: [String: Any] = [
@@ -416,7 +396,7 @@ extension ViewController: CLLocationManagerDelegate {
         case .authorizedWhenInUse:
             print("Location status is OK.")
         }
-  }
+    }
 
   // Handle location manager errors.
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

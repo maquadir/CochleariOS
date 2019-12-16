@@ -69,7 +69,7 @@ class DetailScreen: UIViewController {
     func updateDb(){
         
         // Update one field, creating the document if it does not exist.
-        self.db.collection("users").document(latitude.text!+","+longitude.text!).setData([ "note": notesText.text ], merge: true)
+        self.db.collection("users").document(latitude.text!+","+longitude.text!).setData([ "note": notesText.text as Any ], merge: true)
         
     }
     

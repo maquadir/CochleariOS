@@ -32,7 +32,7 @@ class CustomInfoWindow: UIView {
      super.init(coder: aDecoder)
     }
     func loadView() -> CustomInfoWindow{
-     customInfoWindow = Bundle.main.loadNibNamed("CustomInfoWindow", owner: self, options: nil)?[0] as! CustomInfoWindow
+        customInfoWindow = Bundle.main.loadNibNamed("CustomInfoWindow", owner: self, options: nil)?[0] as? CustomInfoWindow
         return customInfoWindow!
     }
 

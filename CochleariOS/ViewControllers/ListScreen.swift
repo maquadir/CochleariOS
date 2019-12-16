@@ -23,13 +23,8 @@ class ListScreen: UIViewController, UITableViewDelegate,  UITableViewDataSource 
     var db: Firestore!
     var currentLocation: CLLocation!
     
-    var note: [String] = []
-    var clocation: [CLLocationCoordinate2D] = []
-    var finalList = [String: Double]()
-    var List = [String: Double]()
-    var info: [String] = []
+    //array list
     var tList: [Data] = []
-    var fList: [Data] = []
     
     override func viewDidLoad() {
         
@@ -97,16 +92,13 @@ class ListScreen: UIViewController, UITableViewDelegate,  UITableViewDataSource 
             cell.dayLabel.text = tList[indexPath.row].title + " , " + doubleStr + unit
             cell.titleLabel.text = tList[indexPath.row].title
             cell.noteLabel.text = tList[indexPath.row].info
-            
-            let coordinate = CLLocation(latitude: tList[indexPath.row].location.latitude, longitude: tList[indexPath.row].location.longitude)
-            
             cell.latLabel.text = String(tList[indexPath.row].location.latitude)
             cell.lonLabel.text = String(tList[indexPath.row].location.longitude)
            
         
         }
         
-        cell.delegate = self as! LocationCellDelegate
+        cell.delegate = self as LocationCellDelegate
         
         return cell
     }
