@@ -40,6 +40,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     var db: Firestore!
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
@@ -60,7 +61,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
         
         self.mapView.isHidden = true
         
-//        //code for custom info window(commented)
+        //code for custom info window(commented)
         addinfoWindow()
         
         //code to fetch from JSON URl
@@ -73,6 +74,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     }
     
     func setLocationManager(){
+       
         //code to setup location manager
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -84,6 +86,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     }
     
     func displayMap(){
+       
         //code to display the map on screen
         let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude,
                                               longitude: defaultLocation.coordinate.longitude,
@@ -92,9 +95,11 @@ class ViewController: UIViewController,GMSMapViewDelegate {
         self.mapView.settings.myLocationButton = true
         self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.mapView.isMyLocationEnabled = true
+        
     }
     
     func addButton(){
+       
         //code to add a custom button on map
         let button = UIButton(frame: CGRect(x: 15, y: 54, width: 60, height: 40))
         button.setTitle("List", for: .normal)
@@ -104,28 +109,16 @@ class ViewController: UIViewController,GMSMapViewDelegate {
         button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         button.tag = 1
         self.mapView.addSubview(button)
+        
     }
     
     func addinfoWindow(){
+       
         //code to add a custom info window for marker
         self.tappedMarker = GMSMarker()
-        self.customInfoWindow = CustomInfoWindow().loadView()
+//        self.customInfoWindow = CustomInfoWindow().loadView()
         self.mapView.delegate = self
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-       
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-
     }
     
     @objc func buttonClicked(sender: UIButton!) {
@@ -144,6 +137,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
        }
     
     func fetchfromURL(){
+       
         //code to fetch name and location from JSON URl
         guard let url = URL(string: "http://bit.ly/test-locations") else {return}
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -160,8 +154,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
                       return
                 }
             
-                //Now get title value
-                guard let title = jsonArray[0]["name"] as? String else { return }
+                //read from jsonArray
                 for dic in jsonArray{
                     guard let title = dic["name"] as? String else { return }
                     guard let lat = dic["lat"] as? Double else { return }
@@ -195,13 +188,13 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     
     //function to fetch from firebase database
     func fetchfromFirebase(){
-           db.collection("users").getDocuments() { (querySnapshot, err) in
+          
+        db.collection("users").getDocuments() { (querySnapshot, err) in
                if let err = err {
                    print("Error getting documents: \(err)")
                } else {
                    let loc = "Location : "
                    for document in querySnapshot!.documents {
-                   
                        let lat = document.get("latitude").map(String.init(describing:)) ?? "nil"
                        let lon = document.get("longitude").map(String.init(describing:)) ?? "nil"
                        let title = document.get("title").map(String.init(describing:)) ?? "nil"
@@ -219,6 +212,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
                    }
                }
            }
+        
        }
     
     //when tapped on map
@@ -230,13 +224,15 @@ class ViewController: UIViewController,GMSMapViewDelegate {
       marker.map = mapView
         
       //code to display input alert
-        displayInputAlert(marker: marker,coordinate: coordinate )
+       displayInputAlert(marker: marker,coordinate: coordinate )
       
     }
     
     //display marker info window
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
-     return nil
+     
+        return nil
+        
     }
     
     //display a detail screen on marker click
@@ -260,13 +256,16 @@ class ViewController: UIViewController,GMSMapViewDelegate {
             self.present(detailScreen, animated:true, completion:nil)
         }
         
-     return false
+        return false
+        
      }
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-     let position = tappedMarker?.position
+    
+       let position = tappedMarker?.position
 //     customInfoWindow?.center = mapView.projection.point(for: position!)
 //     customInfoWindow?.center.y -= 100
+        
     }
     
     //when info window is tapped
@@ -277,6 +276,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     }
     
     func displayInputAlert(marker : GMSMarker,coordinate: CLLocationCoordinate2D){
+       
         // Create the alert controller.
         let alert = UIAlertController(title: "Location", message: "Enter a location name", preferredStyle: .alert)
               
@@ -344,53 +344,75 @@ class ViewController: UIViewController,GMSMapViewDelegate {
               
              //dismiss the custom info window when clicked anywhere on the map
              customInfoWindow?.removeFromSuperview()
+        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+          
+          super.viewDidAppear(animated)
+         
+      }
+      
+      override func viewDidDisappear(_ animated: Bool) {
+         
+          super.viewDidDisappear(animated)
+      }
+      
+      override func viewWillAppear(_ animated: Bool) {
+          
+          super.viewWillAppear(animated)
+          
+
+      }
 }
 
-
+//extension to View controller
 extension ViewController: CLLocationManagerDelegate {
 
   // Handle incoming location events.
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    let location: CLLocation = locations.last!
-    print("Location: \(location)")
-
-    //animate camera to current location
-    let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-                                          longitude: location.coordinate.longitude,
-                                          zoom: zoomLevel)
-
-    if mapView.isHidden {
-      mapView.isHidden = false
-      mapView.camera = camera
-    } else {
-      mapView.animate(to: camera)
-    }
+   
+        let location: CLLocation = locations.last!
+        print("Location: \(location)")
+        
+        //animate camera to current location
+        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
+                                            longitude: location.coordinate.longitude,
+                                            zoom: zoomLevel)
+        
+        if mapView.isHidden {
+            mapView.isHidden = false
+            mapView.camera = camera
+        } else {
+            mapView.animate(to: camera)
+        }
 
   }
 
   // Handle authorization for the location manager.
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
     switch status {
-    case .restricted:
-      print("Location access was restricted.")
-    case .denied:
-      print("User denied access to location.")
-      // Display the map using the default location.
-      mapView.isHidden = false
-    case .notDetermined:
-      print("Location status not determined.")
-    case .authorizedAlways: fallthrough
-    case .authorizedWhenInUse:
-      print("Location status is OK.")
-    }
+        case .restricted:
+            print("Location access was restricted.")
+        case .denied:
+            print("User denied access to location.")
+            // Display the map using the default location.
+            mapView.isHidden = false
+        case .notDetermined:
+            print("Location status not determined.")
+        case .authorizedAlways: fallthrough
+        case .authorizedWhenInUse:
+            print("Location status is OK.")
+        }
   }
 
   // Handle location manager errors.
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    
     locationManager.stopUpdatingLocation()
     print("Error: \(error)")
+    
   }
 }
 

@@ -29,6 +29,7 @@ class ListScreen: UIViewController, UITableViewDelegate,  UITableViewDataSource 
     var List = [String: Double]()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         //get current location of user
@@ -44,7 +45,8 @@ class ListScreen: UIViewController, UITableViewDelegate,  UITableViewDataSource 
     }
     
     func getLocation(){
-        var locManager = CLLocationManager()
+       
+        let locManager = CLLocationManager()
         locManager.requestWhenInUseAuthorization()
         if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
                 CLLocationManager.authorizationStatus() ==  .authorizedAlways){
@@ -58,6 +60,8 @@ class ListScreen: UIViewController, UITableViewDelegate,  UITableViewDataSource 
 
         for index in 0...clocation.count - 1 {
             let coordinate₁ = CLLocation(latitude: clocation[index].latitude, longitude: clocation[index].longitude)
+            print("Cordinate ",coordinate₁)
+            print("Location ",currentLocation)
             let distanceInMeters = currentLocation.distance(from: coordinate₁)
             List[note[index]] = distanceInMeters
         }
@@ -74,29 +78,37 @@ class ListScreen: UIViewController, UITableViewDelegate,  UITableViewDataSource 
         self.tableView.register(LocationCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return finalList.count
-       }
+        
+     }
        
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! LocationCell
         cell.backgroundColor = UIColor.white
-        print(indexPath.row)
-        print(finalList.count)
+        let unit = " metres "
         if(finalList.count != 0){
-            cell.dayLabel.text = Array(finalList.keys)[indexPath.row]
+             let doubleStr = String(format: "%.2f", Array(finalList.values)[indexPath.row]) // "3.14"
+            cell.dayLabel.text = Array(finalList.keys)[indexPath.row] + " , " + doubleStr + unit
+           
+//            cell.distanceLabel.text = doubleStr + unit
         }
-//        print(indexPath.row)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       
         return 100
+        
     }
 
     @IBAction func closeScreen(_ sender: Any) {
-           self.dismiss(animated: true)
+           
+        self.dismiss(animated: true)
     }
 }

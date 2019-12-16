@@ -25,6 +25,7 @@ class LocationCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupView()
+        
        }
        
     required init?(coder aDecoder: NSCoder) {
@@ -34,6 +35,7 @@ class LocationCell: UITableViewCell {
     func setupView() {
         addSubview(cellView)
         cellView.addSubview(dayLabel)
+//        cellView.addSubview(distanceLabel)
         self.selectionStyle = .none
         
         NSLayoutConstraint.activate([
@@ -44,10 +46,10 @@ class LocationCell: UITableViewCell {
         ])
         
         dayLabel.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        dayLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        dayLabel.widthAnchor.constraint(equalToConstant: 300).isActive = true
         dayLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor).isActive = true
         dayLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20).isActive = true
-        
+
     }
     
     let cellView: UIView = {
@@ -66,5 +68,6 @@ class LocationCell: UITableViewCell {
           label.translatesAutoresizingMaskIntoConstraints = false
           return label
       }()
+  
 
 }

@@ -121,8 +121,8 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U14-eD-1yj">
-                                <rect key="frame" x="347" y="49" width="57" height="36"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <rect key="frame" x="353" y="46" width="51" height="34"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <state key="normal" title="CLOSE">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -131,8 +131,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of locations ordered by distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJg-zf-bTU">
-                                <rect key="frame" x="10" y="49" width="259.5" height="20"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <rect key="frame" x="10" y="49" width="305.5" height="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -145,7 +145,7 @@
                             <constraint firstItem="uJg-zf-bTU" firstAttribute="leading" secondItem="5bq-9N-znf" secondAttribute="leading" constant="10" id="MBf-0z-56B"/>
                             <constraint firstItem="lJs-C0-5ld" firstAttribute="centerX" secondItem="PWc-YJ-bPx" secondAttribute="centerX" id="TGI-uv-ksZ"/>
                             <constraint firstItem="lJs-C0-5ld" firstAttribute="top" secondItem="5bq-9N-znf" secondAttribute="top" constant="30" id="eD3-oQ-jro"/>
-                            <constraint firstItem="U14-eD-1yj" firstAttribute="top" secondItem="5bq-9N-znf" secondAttribute="top" constant="5" id="hGj-sA-pGX"/>
+                            <constraint firstItem="U14-eD-1yj" firstAttribute="top" secondItem="5bq-9N-znf" secondAttribute="top" constant="2" id="hGj-sA-pGX"/>
                             <constraint firstItem="lJs-C0-5ld" firstAttribute="leading" secondItem="5bq-9N-znf" secondAttribute="leading" id="i1r-HP-ERr"/>
                             <constraint firstItem="5bq-9N-znf" firstAttribute="bottom" secondItem="lJs-C0-5ld" secondAttribute="bottom" id="kV9-8V-FLu"/>
                         </constraints>
