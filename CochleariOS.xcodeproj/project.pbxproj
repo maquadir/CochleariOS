@@ -128,13 +128,12 @@
 		B1499DA523A3B15000DBF121 /* CochleariOS */ = {
 			isa = PBXGroup;
 			children = (
+				B17FE1ED23A7A06D00851D8D /* Storyboard */,
 				B17FE1EC23A7A00500851D8D /* Custom */,
 				B17FE1EB23A79FF400851D8D /* Delegate */,
 				B17FE1EA23A79FCE00851D8D /* ViewControllers */,
-				B1499DAC23A3B15000DBF121 /* Main.storyboard */,
 				B1499DAF23A3B15300DBF121 /* Assets.xcassets */,
 				B1499DD623A3DC2400DBF121 /* GoogleService-Info.plist */,
-				B1499DB123A3B15300DBF121 /* LaunchScreen.storyboard */,
 				B1499DB423A3B15300DBF121 /* Info.plist */,
 			);
 			path = CochleariOS;
@@ -185,6 +184,15 @@
 				B151B86C23A4B20C00D909E7 /* CustomInfoWindow.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		B17FE1ED23A7A06D00851D8D /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B1499DAC23A3B15000DBF121 /* Main.storyboard */,
+				B1499DB123A3B15300DBF121 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		B4D55A5B3F013FCF65B8EDFC /* Pods */ = {
