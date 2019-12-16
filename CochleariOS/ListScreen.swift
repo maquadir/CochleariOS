@@ -27,6 +27,7 @@ class ListScreen: UIViewController, UITableViewDelegate,  UITableViewDataSource 
     var clocation: [CLLocationCoordinate2D] = []
     var finalList = [String: Double]()
     var List = [String: Double]()
+    var info: [String] = []
     
     override func viewDidLoad() {
         
@@ -95,11 +96,26 @@ class ListScreen: UIViewController, UITableViewDelegate,  UITableViewDataSource 
         if(finalList.count != 0){
              let doubleStr = String(format: "%.2f", Array(finalList.values)[indexPath.row]) // "3.14"
             cell.dayLabel.text = Array(finalList.keys)[indexPath.row] + " , " + doubleStr + unit
+            cell.titleLabel.text = Array(finalList.keys)[indexPath.row]
+            cell.noteLabel.text = info[indexPath.row]
+            
+            let coordinate = CLLocation(latitude: clocation[indexPath.row].latitude, longitude: clocation[indexPath.row].longitude)
            
-//            cell.distanceLabel.text = doubleStr + unit
+            cell.latLabel.text = String(clocation[indexPath.row].latitude)
+            cell.lonLabel.text = String(clocation[indexPath.row].longitude)
         }
+        
+        cell.delegate = self as! LocationCellDelegate
+        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        print("cell clicked")
+
+    }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
        
@@ -111,4 +127,24 @@ class ListScreen: UIViewController, UITableViewDelegate,  UITableViewDataSource 
            
         self.dismiss(animated: true)
     }
+}
+
+//code to get delegate of cell to call detail screen
+extension ListScreen: LocationCellDelegate {
+
+    func moveToDetail(title:String,note:String,latitude:String,longitude:String){
+         
+              //declare storyboard
+              let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+              let detailScreen = storyBoard.instantiateViewController(withIdentifier: "detailscreen") as! DetailScreen
+              detailScreen.modalPresentationStyle = .fullScreen
+              
+              //display a detail screen
+              detailScreen.text = title
+              detailScreen.lat = latitude
+              detailScreen.lon = longitude
+              detailScreen.info = note
+              self.present(detailScreen, animated:true, completion:nil)
+          }
+
 }

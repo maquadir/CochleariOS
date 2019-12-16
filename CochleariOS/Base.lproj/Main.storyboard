@@ -51,12 +51,27 @@
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BFQ-30-ZIv">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWp-eS-xXf">
                                         <rect key="frame" x="0.0" y="174.5" width="331" height="30"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HUZ-ea-Wxr">
+                                                <rect key="frame" x="0.0" y="0.0" width="165.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Lt6-xH-ofM">
+                                                <rect key="frame" x="165.5" y="0.0" width="165.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Lt6-xH-ofM" firstAttribute="width" secondItem="HUZ-ea-Wxr" secondAttribute="width" id="c6I-7Q-ceg"/>
+                                            <constraint firstItem="HUZ-ea-Wxr" firstAttribute="width" secondItem="lWp-eS-xXf" secondAttribute="width" multiplier="1:2" id="dIs-vX-Kd4"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
@@ -98,7 +113,8 @@
                         <viewLayoutGuide key="safeArea" id="p5u-b1-dRL"/>
                     </view>
                     <connections>
-                        <outlet property="locationLabel" destination="BFQ-30-ZIv" id="s57-PT-gDr"/>
+                        <outlet property="latitude" destination="HUZ-ea-Wxr" id="PHQ-oq-yCJ"/>
+                        <outlet property="longitude" destination="Lt6-xH-ofM" id="y4J-w7-9N6"/>
                         <outlet property="noteLabel" destination="Xo7-jP-Wwo" id="qfe-RJ-nPm"/>
                         <outlet property="notesText" destination="dZa-jz-ZBD" id="dod-oq-s6d"/>
                         <outlet property="titleLabel" destination="mdQ-Fj-zhG" id="7fr-mQ-80J"/>

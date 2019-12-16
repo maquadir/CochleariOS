@@ -10,6 +10,8 @@ import UIKit
 
 class LocationCell: UITableViewCell {
 
+    var delegate: LocationCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,8 +19,15 @@ class LocationCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        if(selected == true){
 
+            print(noteLabel.text)
+            delegate?.moveToDetail(title: titleLabel.text ?? "",note: noteLabel.text ?? "",latitude: latLabel.text ?? "", longitude: lonLabel.text ?? "")
+            
+        }
+      
         // Configure the view for the selected state
+        
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -27,6 +36,7 @@ class LocationCell: UITableViewCell {
         setupView()
         
        }
+    
        
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -35,7 +45,10 @@ class LocationCell: UITableViewCell {
     func setupView() {
         addSubview(cellView)
         cellView.addSubview(dayLabel)
-//        cellView.addSubview(distanceLabel)
+        cellView.addSubview(latLabel)
+        cellView.addSubview(lonLabel)
+        cellView.addSubview(titleLabel)
+        cellView.addSubview(noteLabel)
         self.selectionStyle = .none
         
         NSLayoutConstraint.activate([
@@ -51,6 +64,7 @@ class LocationCell: UITableViewCell {
         dayLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20).isActive = true
 
     }
+    
     
     let cellView: UIView = {
           let view = UIView()
@@ -68,6 +82,50 @@ class LocationCell: UITableViewCell {
           label.translatesAutoresizingMaskIntoConstraints = false
           return label
       }()
+    
+    let titleLabel: UILabel = {
+             let label = UILabel()
+             label.text = ""
+             label.textColor = UIColor.white
+             label.font = UIFont.boldSystemFont(ofSize: 16)
+             label.translatesAutoresizingMaskIntoConstraints = false
+             label.isHidden = true
+             return label
+         }()
+    
+    let noteLabel: UILabel = {
+             let label = UILabel()
+             label.text = ""
+             label.textColor = UIColor.white
+             label.font = UIFont.boldSystemFont(ofSize: 16)
+             label.isHidden = true
+             label.translatesAutoresizingMaskIntoConstraints = false
+             return label
+       }()
   
+    let latLabel: UILabel = {
+           let label = UILabel()
+           label.text = ""
+           label.textColor = UIColor.white
+           label.isHidden = true
+           label.font = UIFont.boldSystemFont(ofSize: 16)
+           label.translatesAutoresizingMaskIntoConstraints = false
+           return label
+       }()
+    
+    let lonLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.textColor = UIColor.white
+        label.isHidden = true
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
+}
+
+//delegate protocol
+protocol LocationCellDelegate {
+    func moveToDetail(title:String,note:String,latitude:String,longitude:String)
 }

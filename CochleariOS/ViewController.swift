@@ -132,6 +132,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
                
              listScreen.note = note
              listScreen.clocation = clocation
+             listScreen.info = info
              self.present(listScreen, animated:true, completion:nil)
            }
        }
@@ -248,10 +249,14 @@ class ViewController: UIViewController,GMSMapViewDelegate {
         let loc = "Location : "
         let location = loc + String(marker.position.latitude) + "," + String(marker.position.longitude)
         
+        let lat = String(clocation[index!].latitude)
+        let lon = String(clocation[index!].longitude)
+        
         //display a detail screen
         if(index != nil){
             detailScreen.text = note[index!]
-            detailScreen.location = clocation[index!]
+            detailScreen.lat = lat
+            detailScreen.lon = lon
             detailScreen.info = info[index!]
             self.present(detailScreen, animated:true, completion:nil)
         }

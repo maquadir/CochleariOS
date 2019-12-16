@@ -18,7 +18,8 @@ class DetailScreen: UIViewController {
 
     //local string variables
     var text:String = ""
-    var location:CLLocationCoordinate2D? = nil
+    var lat:String? = ""
+    var lon:String? = ""
     var info:String = ""
     
     //firebase db variable
@@ -26,7 +27,8 @@ class DetailScreen: UIViewController {
     
     //view elemnts
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var latitude: UILabel!
+    @IBOutlet weak var longitude: UILabel!
     @IBOutlet weak var noteLabel: UILabel!
     @IBOutlet weak var notesText: UITextField!
     
@@ -36,11 +38,11 @@ class DetailScreen: UIViewController {
         //assign text to labels
         let title = "Title : "
         titleLabel.text = title + text
-        let lat = String(location!.latitude)
-        let lon = String(location!.longitude)
+    
         let loc = "Location : "
-        locationLabel.text = loc + lat + "," + lon
-        
+        latitude.text = loc + lat!
+        longitude.text = lon
+     
         let note = "Notes : "
         if(info == ""){
             noteLabel.text = ""
@@ -68,7 +70,7 @@ class DetailScreen: UIViewController {
     func updateDb(){
         
         // Update one field, creating the document if it does not exist.
-        self.db.collection("users").document(String(location!.latitude)+","+String(location!.longitude)).setData([ "note": notesText.text ], merge: true)
+        self.db.collection("users").document(latitude.text!+","+longitude.text!).setData([ "note": notesText.text ], merge: true)
         
     }
     
