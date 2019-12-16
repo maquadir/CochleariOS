@@ -52,7 +52,7 @@ class LocationCell: UITableViewCell {
     
     let cellView: UIView = {
           let view = UIView()
-        view.backgroundColor = UIColor.lightGray
+        view.backgroundColor = UIColor.black
           view.layer.cornerRadius = 10
           view.translatesAutoresizingMaskIntoConstraints = false
           return view

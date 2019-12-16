@@ -72,7 +72,6 @@ class ListScreen: UIViewController, UITableViewDelegate,  UITableViewDataSource 
         
         // Register the table view cell class and its reuse id
         self.tableView.register(LocationCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        
         tableView.delegate = self
         tableView.dataSource = self
     }
