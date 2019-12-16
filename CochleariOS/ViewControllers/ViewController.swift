@@ -35,6 +35,8 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     var note: [String] = []
     var info: [String] = []
     var clocation: [CLLocationCoordinate2D] = []
+//    var List = [String: CLLocationCoordinate2D]()
+    var List: [Data] = []
     
     //firebase db variable
     var db: Firestore!
@@ -130,9 +132,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
              let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
              let listScreen = storyBoard.instantiateViewController(withIdentifier: "listscreen") as! ListScreen
                
-             listScreen.note = note
-             listScreen.clocation = clocation
-             listScreen.info = info
+             listScreen.tList = List
              self.present(listScreen, animated:true, completion:nil)
            }
        }
@@ -166,6 +166,8 @@ class ViewController: UIViewController,GMSMapViewDelegate {
                     self.note.append(title)
                     self.clocation.append(location)
                     self.info.append("")
+                    
+                    self.List.append(Data(title, location, "",0))
                 
                     //place markers based on locations fetched from JSON
                   DispatchQueue.main.async {
@@ -210,6 +212,8 @@ class ViewController: UIViewController,GMSMapViewDelegate {
                        self.note.append(title)
                        self.info.append(info)
                        self.clocation.append(marker.position)
+                    
+                       self.List.append(Data(title, marker.position, info,0))
                    }
                }
            }
@@ -249,15 +253,15 @@ class ViewController: UIViewController,GMSMapViewDelegate {
         let loc = "Location : "
         let location = loc + String(marker.position.latitude) + "," + String(marker.position.longitude)
         
-        let lat = String(clocation[index!].latitude)
-        let lon = String(clocation[index!].longitude)
+        let lat = String(List[index!].location.latitude)
+        let lon = String(List[index!].location.longitude)
         
         //display a detail screen
         if(index != nil){
-            detailScreen.text = note[index!]
+            detailScreen.text = List[index!].title
             detailScreen.lat = lat
             detailScreen.lon = lon
-            detailScreen.info = info[index!]
+            detailScreen.info = List[index!].info
             self.present(detailScreen, animated:true, completion:nil)
         }
         
@@ -317,6 +321,8 @@ class ViewController: UIViewController,GMSMapViewDelegate {
               self.note.append(marker.title ?? "")
               self.clocation.append(marker.position)
               self.info.append("")
+                
+              self.List.append(Data(marker.title ?? "", marker.position, "",0))
               
               // Add a new document with a generated ID
               let docData: [String: Any] = [

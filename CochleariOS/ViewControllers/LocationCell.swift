@@ -21,7 +21,6 @@ class LocationCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         if(selected == true){
 
-            print(noteLabel.text)
             delegate?.moveToDetail(title: titleLabel.text ?? "",note: noteLabel.text ?? "",latitude: latLabel.text ?? "", longitude: lonLabel.text ?? "")
             
         }
@@ -117,7 +116,7 @@ class LocationCell: UITableViewCell {
         let label = UILabel()
         label.text = ""
         label.textColor = UIColor.white
-        label.isHidden = true
+        label.isHidden  = true
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

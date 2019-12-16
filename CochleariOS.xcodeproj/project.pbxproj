@@ -24,6 +24,7 @@
 		B151B86D23A4B20C00D909E7 /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B151B86C23A4B20C00D909E7 /* CustomInfoWindow.swift */; };
 		B151B86F23A5383200D909E7 /* ListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B151B86E23A5383200D909E7 /* ListScreen.swift */; };
 		B151B87323A5C98300D909E7 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B151B87223A5C98300D909E7 /* LocationCell.swift */; };
+		B17FE1EF23A7AAF100851D8D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FE1EE23A7AAF100851D8D /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		B151B86C23A4B20C00D909E7 /* CustomInfoWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
 		B151B86E23A5383200D909E7 /* ListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScreen.swift; sourceTree = "<group>"; };
 		B151B87223A5C98300D909E7 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		B17FE1EE23A7AAF100851D8D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		CC24F5B366042BD5F1690A85 /* Pods-CochleariOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOS.debug.xcconfig"; path = "Target Support Files/Pods-CochleariOS/Pods-CochleariOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D4093B173950669682C81AA6 /* Pods_CochleariOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CochleariOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70C5701A842F643B1383801 /* Pods-CochleariOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOSUITests.release.xcconfig"; path = "Target Support Files/Pods-CochleariOSUITests/Pods-CochleariOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				B151B86A23A4B17100D909E7 /* CustomInfoWindow.xib */,
 				B151B86C23A4B20C00D909E7 /* CustomInfoWindow.swift */,
+				B17FE1EE23A7AAF100851D8D /* Data.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				B151B87323A5C98300D909E7 /* LocationCell.swift in Sources */,
 				B151B86D23A4B20C00D909E7 /* CustomInfoWindow.swift in Sources */,
 				B1499DA923A3B15000DBF121 /* SceneDelegate.swift in Sources */,
+				B17FE1EF23A7AAF100851D8D /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

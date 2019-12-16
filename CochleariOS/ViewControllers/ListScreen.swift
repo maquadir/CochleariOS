@@ -28,6 +28,8 @@ class ListScreen: UIViewController, UITableViewDelegate,  UITableViewDataSource 
     var finalList = [String: Double]()
     var List = [String: Double]()
     var info: [String] = []
+    var tList: [Data] = []
+    var fList: [Data] = []
     
     override func viewDidLoad() {
         
@@ -57,19 +59,14 @@ class ListScreen: UIViewController, UITableViewDelegate,  UITableViewDataSource 
     }
     
     func sortLocations(){
-        print(clocation.count)
-
-        for index in 0...clocation.count - 1 {
-            let coordinate₁ = CLLocation(latitude: clocation[index].latitude, longitude: clocation[index].longitude)
-            print("Cordinate ",coordinate₁)
-            print("Location ",currentLocation)
-            let distanceInMeters = currentLocation.distance(from: coordinate₁)
-            List[note[index]] = distanceInMeters
-        }
         
-        for (k,v) in (Array(List).sorted {$0.1 < $1.1}) {
-            finalList[k] = v
-        }
+        //calculate distance of each location from current location
+        for index in 0...tList.count - 1 {
+                    let coordinate₁ = CLLocation(latitude: tList[index].location.latitude, longitude: tList[index].location.longitude)
+                           tList[index].distance = currentLocation.distance(from: coordinate₁)
+              }
+        //sort the list by distance
+        tList.sort(by: { $0.distance < $1.distance })
     
     }
     
@@ -84,25 +81,29 @@ class ListScreen: UIViewController, UITableViewDelegate,  UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return finalList.count
+        return tList.count
         
      }
        
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
+        //code to display data in cell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! LocationCell
         cell.backgroundColor = UIColor.white
         let unit = " metres "
-        if(finalList.count != 0){
-             let doubleStr = String(format: "%.2f", Array(finalList.values)[indexPath.row]) // "3.14"
-            cell.dayLabel.text = Array(finalList.keys)[indexPath.row] + " , " + doubleStr + unit
-            cell.titleLabel.text = Array(finalList.keys)[indexPath.row]
-            cell.noteLabel.text = info[indexPath.row]
+        if(tList.count != 0){
+                       
+            let doubleStr = String(format: "%.2f", tList[indexPath.row].distance)
+            cell.dayLabel.text = tList[indexPath.row].title + " , " + doubleStr + unit
+            cell.titleLabel.text = tList[indexPath.row].title
+            cell.noteLabel.text = tList[indexPath.row].info
             
-            let coordinate = CLLocation(latitude: clocation[indexPath.row].latitude, longitude: clocation[indexPath.row].longitude)
+            let coordinate = CLLocation(latitude: tList[indexPath.row].location.latitude, longitude: tList[indexPath.row].location.longitude)
+            
+            cell.latLabel.text = String(tList[indexPath.row].location.latitude)
+            cell.lonLabel.text = String(tList[indexPath.row].location.longitude)
            
-            cell.latLabel.text = String(clocation[indexPath.row].latitude)
-            cell.lonLabel.text = String(clocation[indexPath.row].longitude)
+        
         }
         
         cell.delegate = self as! LocationCellDelegate

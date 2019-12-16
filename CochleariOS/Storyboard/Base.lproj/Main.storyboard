@@ -51,25 +51,32 @@
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWp-eS-xXf">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="lWp-eS-xXf">
                                         <rect key="frame" x="0.0" y="174.5" width="331" height="30"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loc: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mTZ-Il-RK8">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="30"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HUZ-ea-Wxr">
-                                                <rect key="frame" x="0.0" y="0.0" width="165.5" height="30"/>
+                                                <rect key="frame" x="58" y="0.0" width="135" height="30"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Lt6-xH-ofM">
-                                                <rect key="frame" x="165.5" y="0.0" width="165.5" height="30"/>
+                                                <rect key="frame" x="196" y="0.0" width="135" height="30"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Lt6-xH-ofM" firstAttribute="width" secondItem="HUZ-ea-Wxr" secondAttribute="width" id="c6I-7Q-ceg"/>
-                                            <constraint firstItem="HUZ-ea-Wxr" firstAttribute="width" secondItem="lWp-eS-xXf" secondAttribute="width" multiplier="1:2" id="dIs-vX-Kd4"/>
+                                            <constraint firstItem="mTZ-Il-RK8" firstAttribute="width" secondItem="lWp-eS-xXf" secondAttribute="width" multiplier="0.5:3" id="6hp-68-xWq"/>
+                                            <constraint firstItem="HUZ-ea-Wxr" firstAttribute="width" secondItem="lWp-eS-xXf" secondAttribute="width" multiplier="1.25:3" id="Guz-IS-0Uz"/>
+                                            <constraint firstItem="Lt6-xH-ofM" firstAttribute="width" secondItem="HUZ-ea-Wxr" secondAttribute="width" id="xQd-c8-jf0"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>

@@ -39,8 +39,7 @@ class DetailScreen: UIViewController {
         let title = "Title : "
         titleLabel.text = title + text
     
-        let loc = "Location : "
-        latitude.text = loc + lat!
+        latitude.text = lat
         longitude.text = lon
      
         let note = "Notes : "
