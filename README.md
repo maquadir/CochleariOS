@@ -17,11 +17,7 @@ The native iOS application is written in swift using Xcode.Google Firebase clous
 
 # Getting Started
 1. Clone the repo
-$ git clone git@github.com:maquadir/CochleariOS.git
-
-(or)
-
-Download source code and unzip the downloaded folder and open project in Xcode.
+$ git clone git@github.com:maquadir/CochleariOS.git (or) Download source code and unzip the downloaded folder and open project in Xcode.
 
 2. Navigate to the project folder
 $ cd CochleariOS
