@@ -23,7 +23,7 @@ class CustomInfoWindow: UIView {
     
     var customInfoWindow : CustomInfoWindow?
     var detailscreen : DetailScreen?
-    let vc = ViewController()
+//    let vc = ViewController()
     
     override init(frame: CGRect) {
      super.init(frame: frame)

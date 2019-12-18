@@ -16,101 +16,116 @@ import FirebaseFirestore
 
 class ViewController: UIViewController,GMSMapViewDelegate {
 
-    //GMSAutocompleteResultsViewController provides an interface that displays locations in a table view
+    //variables
     var locationManager = CLLocationManager()
-    var currentLocation: CLLocation?
     var mapView: GMSMapView!
     var zoomLevel: Float = 2.0
-    
-    // The currently selected place.
     var selectedPlace: GMSPlace?
-    // A default location to use when location permission is not granted.
-    let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
-    
-    //variables for custom info window
     var tappedMarker : GMSMarker?
     var customInfoWindow : CustomInfoWindow?
-    
-    //local array lists
+    var listbutton: UIButton!
     var List: [Data] = []
-    
-    //firebase db variable
     var db: Firestore!
+    let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
     
+    //view model
+    var viewModel: VCViewModel! {
+        didSet {
+            
+           //set location manager for current location
+           locationManager.desiredAccuracy = kCLLocationAccuracyBest
+           locationManager.requestAlwaysAuthorization()
+           locationManager.distanceFilter = 50
+           locationManager.startUpdatingLocation()
+           locationManager.delegate = self as? CLLocationManagerDelegate
+            
+           //set mapview
+           self.mapView.settings.myLocationButton = true
+           self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+           self.mapView.isMyLocationEnabled = true
+//           self.view.addSubview(mapView)
+            
+           //add button
+           listbutton.setTitle("List", for: .normal)
+           listbutton.setTitleColor(UIColor.white, for: .normal)
+           listbutton.backgroundColor = .black
+           listbutton.layer.cornerRadius = 10
+           listbutton.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+           listbutton.tag = 1
+//           self.mapView.addSubview(listbutton)
+            
+//           self.mapView.isHidden = true
+        }
+    }
+
     override func viewDidLoad() {
        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //initialize firebase database
-        db = Firestore.firestore()
-        
-        //set the location manager
+        //1.set the location manager
         setLocationManager()
        
-        //display map and move camera to current location
-        displayMap()
-
-        // Add the map to the view, hide it until we've got a location update.
-        view.addSubview(mapView)
+        //2.set map
+        setMap()
         
-        //add a button in maps
-        addButton()
+        //3.set list button
+        setButton()
         
-        self.mapView.isHidden = true
+        //4.set view model
+        setViewModel()
         
-        //code for custom info window(commented)
-        addinfoWindow()
+        //5.setup view
+        setupViews()
         
-        //code to fetch from JSON URl
-        fetchfromURL()
+        //6.set map marker
+        setmapMarker()
         
-        //code to fetch data from firebase database
-        fetchfromFirebase()
+        //7.code to fetch from JSON URl
+        viewModel.fetchfromURL()
+        
+        //8.code to fetch data from firebase database
+        viewModel.fetchfromFirebase()
  
-       
     }
     
     func setLocationManager(){
        
         //code to setup location manager
         locationManager = CLLocationManager()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
-        locationManager.distanceFilter = 50
-        locationManager.startUpdatingLocation()
-        locationManager.delegate = self as? CLLocationManagerDelegate
 
     }
     
-    func displayMap(){
+    func setMap(){
        
         //code to display the map on screen
         let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude,
                                               longitude: defaultLocation.coordinate.longitude,
                                               zoom: zoomLevel)
         self.mapView = GMSMapView.map(withFrame: view.bounds, camera: camera)
-        self.mapView.settings.myLocationButton = true
-        self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.mapView.isMyLocationEnabled = true
-        
+
     }
     
-    func addButton(){
+    func setButton(){
        
         //code to add a custom button on map
-        let button = UIButton(frame: CGRect(x: 15, y: 54, width: 60, height: 40))
-        button.setTitle("List", for: .normal)
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.backgroundColor = .black
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
-        button.tag = 1
-        self.mapView.addSubview(button)
+        listbutton = UIButton(frame: CGRect(x: 15, y: 54, width: 60, height: 40))
         
     }
     
-    func addinfoWindow(){
+    func setViewModel(){
+        
+        viewModel = VCViewModel(locationManager:locationManager,mapView:mapView, listbutton: listbutton)
+        viewModel.vcviewmodeldelegate = self
+    }
+    
+    func setupViews(){
+        self.view.addSubview(mapView)
+        self.mapView.addSubview(listbutton)
+        self.mapView.isHidden = true
+    }
+    
+    func setmapMarker(){
        
         //code to add a custom info window for marker
         self.tappedMarker = GMSMarker()
@@ -133,79 +148,6 @@ class ViewController: UIViewController,GMSMapViewDelegate {
            }
        }
     
-    func fetchfromURL(){
-       
-        //code to fetch name and location from JSON URl
-        guard let url = URL(string: "http://bit.ly/test-locations") else {return}
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-        guard let dataResponse = data,
-                  error == nil else {
-                  print(error?.localizedDescription ?? "Response Error")
-                  return }
-            do{
-                //here dataResponse received from a network request
-                let jsonResponse = try JSONSerialization.jsonObject(with:
-                                       dataResponse, options: .allowFragments) as? [String:Any]
-                let locations = jsonResponse?["locations"] as? [[String: Any]] ?? []
-                guard let jsonArray = locations as? [[String: Any]] else {
-                      return
-                }
-            
-                //read from jsonArray
-                for dic in jsonArray{
-                    guard let title = dic["name"] as? String else { return }
-                    guard let lat = dic["lat"] as? Double else { return }
-                    guard let lng = dic["lng"] as? Double else { return }
-                    let location = CLLocationCoordinate2D(latitude: Double(lat) , longitude: Double(lng) )
-                    
-                    //add to array lists
-                    self.List.append(Data(title, location, "",0))
-                
-                    //place markers based on locations fetched from JSON
-                  DispatchQueue.main.async {
-                    let marker = GMSMarker()
-                    marker.position = CLLocationCoordinate2D(latitude: Double(lat) , longitude: Double(lng) )
-                    marker.map = self.mapView
-                  }
-                  
-
-                }
-                //compiler outout -  delectus aut autem//Response result
-             } catch let parsingError {
-                print("Error", parsingError)
-           }
-        }
-        task.resume()
-        
-      
-    
-    }
-    
-    //function to fetch from firebase database
-    func fetchfromFirebase(){
-          
-        db.collection("users").getDocuments() { (querySnapshot, err) in
-               if let err = err {
-                   print("Error getting documents: \(err)")
-               } else {
-                   for document in querySnapshot!.documents {
-                       let lat = document.get("latitude").map(String.init(describing:)) ?? "nil"
-                       let lon = document.get("longitude").map(String.init(describing:)) ?? "nil"
-                       let title = document.get("title").map(String.init(describing:)) ?? "nil"
-                       let info = document.get("note").map(String.init(describing:)) ?? "nil"
-                       
-                       //add a marker to tappped location
-                       let marker = GMSMarker()
-                       marker.position = CLLocationCoordinate2D(latitude: Double(lat)! , longitude: Double(lon)! )
-                       marker.map = self.mapView
-                   
-                       self.List.append(Data(title, marker.position, info,0))
-                   }
-               }
-           }
-        
-       }
-    
     //when tapped on map
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
       
@@ -215,7 +157,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
       marker.map = mapView
         
       //code to display input alert
-       displayInputAlert(marker: marker,coordinate: coordinate )
+      viewModel.displayInputAlert(marker: marker,coordinate: coordinate )
       
     }
     
@@ -229,25 +171,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     //display a detail screen on marker click
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         
-        //declare storyboard
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let detailScreen = storyBoard.instantiateViewController(withIdentifier: "detailscreen") as! DetailScreen
-        detailScreen.modalPresentationStyle = .fullScreen
-        
-        //fetch the indeces
-        let index = List.firstIndex(where: {$0.location.latitude == marker.position.latitude && $0.location.longitude == marker.position.longitude}) // 0
-        
-        let lat = String(List[index!].location.latitude)
-        let lon = String(List[index!].location.longitude)
-        
-        //display a detail screen
-        if(index != nil){
-            detailScreen.text = List[index!].title
-            detailScreen.lat = lat
-            detailScreen.lon = lon
-            detailScreen.info = List[index!].info
-            self.present(detailScreen, animated:true, completion:nil)
-        }
+        viewModel.displayDetailScreen(marker:marker)
         
         return false
         
@@ -255,6 +179,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
     
+        //commented code
 //       let position = tappedMarker?.position
 //     customInfoWindow?.center = mapView.projection.point(for: position!)
 //     customInfoWindow?.center.y -= 100
@@ -268,93 +193,7 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     
     }
     
-    func displayInputAlert(marker : GMSMarker,coordinate: CLLocationCoordinate2D){
-       
-        // Create the alert controller.
-        let alert = UIAlertController(title: "Location", message: "Enter a location name", preferredStyle: .alert)
-              
-            // Add the text field. You can configure it however you need.
-        alert.addTextField { (textField) in
-                textField.text = ""
-            }
-              
-           // Grab the value from the text field, and print it when the user clicks OK.
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-              let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
-              
-              
-              //display alert when no ext is entered
-             if(textField?.text == ""){
-                  // Create the alert controller.
-                     let walert = UIAlertController(title: "Warning", message: "Please enter a location!", preferredStyle: .alert)
-                       
-                     walert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak walert] (_) in
-                      marker.map = nil
-                      walert?.dismiss(animated: true, completion: nil)
-                       }))
-                  
-                  self.present(walert, animated: true, completion: nil)
-              }else{
-              
-              marker.title = textField?.text
-              let loc_str = "Loc : "
-              let snippet_text = loc_str + String(coordinate.latitude) + "," + String(coordinate.latitude)
-              marker.snippet = snippet_text
-              
-              //append to variables
-             self.List.append(Data(marker.title ?? "", marker.position, "",0))
-              
-              // Add a new document with a generated ID
-              let docData: [String: Any] = [
-                  "title": textField?.text as Any ,
-                  "latitude": String(coordinate.latitude),
-                  "longitude": String(coordinate.longitude),
-                  "note": "",
-                  ]
-              
-            self.db.collection("users").document(String(coordinate.latitude)+","+String(coordinate.longitude)).setData(docData) { err in
-                  if let err = err {
-                      print("Error adding document: \(err)")
-                  } else {
-                      print("Document added successfully")
-                  }
-              }
-              }
-              
-              
-              print("Text field: \(String(describing: textField?.text))")
-            }))
-              
-           alert.addAction(UIAlertAction(title: "CANCEL", style: .default, handler: { [weak alert] (_) in
-              marker.map = nil
-              print("alert dismissed")
-               }))
-              
-            //Present the alert.
-            self.present(alert, animated: true, completion: nil)
-              
-             //dismiss the custom info window when clicked anywhere on the map
-             customInfoWindow?.removeFromSuperview()
-        
-    }
     
-    override func viewDidAppear(_ animated: Bool) {
-          
-          super.viewDidAppear(animated)
-         
-      }
-      
-      override func viewDidDisappear(_ animated: Bool) {
-         
-          super.viewDidDisappear(animated)
-      }
-      
-      override func viewWillAppear(_ animated: Bool) {
-          
-          super.viewWillAppear(animated)
-          
-
-      }
 }
 
 //extension to View controller
@@ -407,4 +246,29 @@ extension ViewController: CLLocationManagerDelegate {
   }
 }
 
+
+extension ViewController: VCViewModelDelegate{
+    
+    func presentScreen(screen: UIViewController, animated: Bool, completion: (() -> Void)?) {
+         self.present(screen, animated: animated, completion: completion)
+    }
+    
+    
+    func presentAlert(alert: UIAlertController, animated: Bool, completion: (() -> Void)?) {
+         self.present(alert, animated: animated, completion: completion)
+    }
+    
+
+    func placeMarker(_ lat: Double, _ lon: Double,_ List:[Data]) {
+        DispatchQueue.main.async {
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: lat , longitude: lon )
+            marker.map = self.mapView
+            self.List = List
+        }
+    }
+    
+    
+    
+}
 

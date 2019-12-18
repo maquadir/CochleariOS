@@ -10,15 +10,18 @@ import GooglePlaces
 import MapKit
 import GoogleMaps
 
-struct Data {
-    let title: String
-    let location: CLLocationCoordinate2D
-    let info: String
-    var distance: Double
+public struct Data {
+    
+    public let title: String
+    public let location: CLLocationCoordinate2D
+    public let info: String
+    public var distance: Double
+    
     init(_ title: String, _ location: CLLocationCoordinate2D, _ info: String,_ distance: Double) {
         self.title = title
         self.location = location
         self.info = info
         self.distance = distance
     }
+    
 }

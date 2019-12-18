@@ -10,6 +10,7 @@
 		16601DB508843674E0ABF368 /* Pods_CochleariOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4093B173950669682C81AA6 /* Pods_CochleariOSTests.framework */; };
 		2766F08DF457E3C9BD9F3C5C /* Pods_CochleariOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2DFB007CA51642FC9B9129F /* Pods_CochleariOS.framework */; };
 		A85B203096D2858E33956102 /* Pods_CochleariOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 773CEAEC4CC8A3C48E3EA01F /* Pods_CochleariOSUITests.framework */; };
+		B1075B4D23AA52C1001F3B9F /* VCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1075B4C23AA52C1001F3B9F /* VCViewModel.swift */; };
 		B1499DA723A3B15000DBF121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1499DA623A3B15000DBF121 /* AppDelegate.swift */; };
 		B1499DA923A3B15000DBF121 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1499DA823A3B15000DBF121 /* SceneDelegate.swift */; };
 		B1499DAB23A3B15000DBF121 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1499DAA23A3B15000DBF121 /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 		4BF63B4B4800AE4DCE242887 /* Pods-CochleariOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOS.release.xcconfig"; path = "Target Support Files/Pods-CochleariOS/Pods-CochleariOS.release.xcconfig"; sourceTree = "<group>"; };
 		773CEAEC4CC8A3C48E3EA01F /* Pods_CochleariOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CochleariOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DFB007CA51642FC9B9129F /* Pods_CochleariOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CochleariOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1075B4C23AA52C1001F3B9F /* VCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCViewModel.swift; sourceTree = "<group>"; };
 		B1499DA323A3B15000DBF121 /* CochleariOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CochleariOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1499DA623A3B15000DBF121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1499DA823A3B15000DBF121 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		B1499DA523A3B15000DBF121 /* CochleariOS */ = {
 			isa = PBXGroup;
 			children = (
+				B1075B4C23AA52C1001F3B9F /* VCViewModel.swift */,
 				B17FE1ED23A7A06D00851D8D /* Storyboard */,
 				B17FE1EC23A7A00500851D8D /* Custom */,
 				B17FE1EB23A79FF400851D8D /* Delegate */,
@@ -464,6 +467,7 @@
 			files = (
 				B151B86923A4AF3600D909E7 /* DetailScreen.swift in Sources */,
 				B151B86F23A5383200D909E7 /* ListScreen.swift in Sources */,
+				B1075B4D23AA52C1001F3B9F /* VCViewModel.swift in Sources */,
 				B1499DAB23A3B15000DBF121 /* ViewController.swift in Sources */,
 				B1499DA723A3B15000DBF121 /* AppDelegate.swift in Sources */,
 				B151B87323A5C98300D909E7 /* LocationCell.swift in Sources */,
