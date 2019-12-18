@@ -15,7 +15,25 @@ The native iOS application is written in swift using Xcode.Google Firebase clous
 - In the detail screen, allow the user to enter notes about the location
 - All information entered by the user must be persisted between app launches
 
+# Setting up the iOS Project
+1.Clone the repo
+$ git clone git@github.com:maquadir/CochleariOS.git
+
+(or)
+
+Download source code and unzip the downloaded folder and open project in Xcode.
+
+2.Navigate to the project folder
+$ cd CochleariOS
+
+3.Open Cochlearn.xcodeproj from the folder.
+
+4.Build the project (⌘+B) and check for any errors.
+
+5.Run the app (⌘+R).and test it.
+
 # Application Flow
+Following screenshots represent the flow of the application-
 
 <img width="250" alt="architecture" src="https://user-images.githubusercontent.com/19331629/70877138-65573100-2010-11ea-98db-c0cc4e9030d7.png"> <img width="250" alt="architecture" src="https://user-images.githubusercontent.com/19331629/70877205-ab13f980-2010-11ea-8cd1-aa7b8b892086.png"> <img width="250" alt="architecture" src="https://user-images.githubusercontent.com/19331629/70877216-b9faac00-2010-11ea-8917-bab87c5a2997.png"> <img width="250" alt="architecture" src="https://user-images.githubusercontent.com/19331629/70877250-df87b580-2010-11ea-8972-8af69d495be8.png"> <img width="250" alt="architecture" src="https://user-images.githubusercontent.com/19331629/70877282-f62e0c80-2010-11ea-8669-990c6fbb5ad4.png"> <img width="250" alt="architecture" src="https://user-images.githubusercontent.com/19331629/70877302-0cd46380-2011-11ea-8877-bc1380c28d21.png"> <img width="250" alt="architecture" src="https://user-images.githubusercontent.com/19331629/70877331-207fca00-2011-11ea-9869-99e4a10282c1.png"> <img width="250" alt="architecture" src="https://user-images.githubusercontent.com/19331629/70877351-368d8a80-2011-11ea-8a48-7928bc587d5b.png"> <img width="250" alt="architecture" src="https://user-images.githubusercontent.com/19331629/70877377-50c76880-2011-11ea-93b2-6e5b086c4fda.png">
 
