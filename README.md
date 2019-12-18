@@ -3,7 +3,9 @@ An app for a social photography startup. It maintains a list of scenic photo loc
 locations, plus be able to add their own locations, as well as add notes about each location.
 
 # Application Design & Architecture
-The native iOS application is written in swift using Xcode.Google Firebase cloustore has been used as the backend-as-a-service provider. Google Maps API for iOS has been used to display the map view.
+The native iOS application is written in swift using Xcode.Google Firebase cloustore has been used as the backend-as-a-service provider. Google Maps API for iOS has been used to display the map view. The app follows the MVVM architecture given below
+
+<img width="250" alt="architecture" src="https://user-images.githubusercontent.com/19331629/71114370-b8ed9880-2223-11ea-9ac1-2c2273949c47.png">
 
 # Explicit Requirements
 - Provide a map screen (using any map SDK of your choosing)
