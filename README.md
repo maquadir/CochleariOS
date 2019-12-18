@@ -38,11 +38,11 @@ Following screenshots represent the flow of the application-
 # Building
 1. App uses CocoaPods for managing the installation of third-party libraries. If you don't already have it installed, here's how you can do so:
 
-### Using Google maps
-   pod 'GoogleMaps'
+   ### Using Google maps
+        pod 'GoogleMaps'
    
-### Using Google places   
-   pod 'GooglePlaces'
+   ### Using Google places   
+        pod 'GooglePlaces'
    
 2. Run pod install in project's root directory.
 
