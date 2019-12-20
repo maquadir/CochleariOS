@@ -56,13 +56,19 @@ class ListScreen: UIViewController, UITableViewDelegate,  UITableViewDataSource 
     func sortLocations(){
         
         //calculate distance of each location from current location
+        if(tList.isEmpty == false){
         for index in 0...tList.count - 1 {
-                    let coordinate₁ = CLLocation(latitude: tList[index].location.latitude, longitude: tList[index].location.longitude)
-                           tList[index].distance = currentLocation.distance(from: coordinate₁)
-              }
+            calculateDistance(index: index)
+                   
+         }
         //sort the list by distance
         tList.sort(by: { $0.distance < $1.distance })
+        }
+    }
     
+    func calculateDistance(index:Int){
+        let coordinate₁ = CLLocation(latitude: tList[index].location.latitude, longitude: tList[index].location.longitude)
+        tList[index].distance = currentLocation.distance(from: coordinate₁)
     }
     
     func setupTableView(){

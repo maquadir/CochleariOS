@@ -112,12 +112,15 @@ class ViewController: UIViewController,GMSMapViewDelegate {
         
         viewModel = VCViewModel(locationManager:locationManager,mapView:mapView, listbutton: listbutton)
         viewModel.vcviewmodeldelegate = self
+        
     }
     
     func setupViews(){
+        
         self.view.addSubview(mapView)
         self.mapView.addSubview(listbutton)
         self.mapView.isHidden = true
+        
     }
     
     func setmapMarker(){

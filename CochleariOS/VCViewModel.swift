@@ -31,6 +31,7 @@ public class VCViewModel {
     var List: [Data] = []
     var vcviewmodeldelegate:VCViewModelDelegate?
     var db: Firestore!
+    let url:String = "http://bit.ly/test-locations"
     
     
     public init(locationManager: CLLocationManager,mapView:GMSMapView,listbutton:UIButton) {
@@ -42,7 +43,7 @@ public class VCViewModel {
     public func fetchfromURL(){
         
         //code to fetch name and location from JSON URl
-               guard let url = URL(string: "http://bit.ly/test-locations") else {return}
+               guard let url = URL(string: url) else {return}
                let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                guard let dataResponse = data,
                          error == nil else {

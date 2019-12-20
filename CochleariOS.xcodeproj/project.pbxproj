@@ -23,6 +23,8 @@
 		B151B86F23A5383200D909E7 /* ListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B151B86E23A5383200D909E7 /* ListScreen.swift */; };
 		B151B87323A5C98300D909E7 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B151B87223A5C98300D909E7 /* LocationCell.swift */; };
 		B17FE1EF23A7AAF100851D8D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FE1EE23A7AAF100851D8D /* Data.swift */; };
+		B1DCBBD323AC847C00204934 /* FetchFromSourcesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DCBBD223AC847C00204934 /* FetchFromSourcesTests.swift */; };
+		B1DCBBD623AC8CD600204934 /* ButtonTapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DCBBD523AC8CD600204934 /* ButtonTapTests.swift */; };
 		FCCBF34A96ECB20E53F84BA3 /* Pods_CochleariOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036A63C08723E4AEB7006D1E /* Pods_CochleariOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		B151B86E23A5383200D909E7 /* ListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScreen.swift; sourceTree = "<group>"; };
 		B151B87223A5C98300D909E7 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		B17FE1EE23A7AAF100851D8D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		B1DCBBD223AC847C00204934 /* FetchFromSourcesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFromSourcesTests.swift; sourceTree = "<group>"; };
+		B1DCBBD523AC8CD600204934 /* ButtonTapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTapTests.swift; sourceTree = "<group>"; };
 		DF8291096798C3FB5057E699 /* Pods_CochleariOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CochleariOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4CA4658955277BAD169129 /* Pods-CochleariOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOSTests.debug.xcconfig"; path = "Target Support Files/Pods-CochleariOSTests/Pods-CochleariOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F5A4E30089CC73E424D3366E /* Pods-CochleariOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOSUITests.release.xcconfig"; path = "Target Support Files/Pods-CochleariOSUITests/Pods-CochleariOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 		B1499DA523A3B15000DBF121 /* CochleariOS */ = {
 			isa = PBXGroup;
 			children = (
+				B1DCBBD423AC8CB300204934 /* UnitTests */,
 				B1075B4C23AA52C1001F3B9F /* VCViewModel.swift */,
 				B17FE1ED23A7A06D00851D8D /* Storyboard */,
 				B17FE1EC23A7A00500851D8D /* Custom */,
@@ -203,6 +208,15 @@
 				B1499DB123A3B15300DBF121 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B1DCBBD423AC8CB300204934 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1DCBBD223AC847C00204934 /* FetchFromSourcesTests.swift */,
+				B1DCBBD523AC8CD600204934 /* ButtonTapTests.swift */,
+			);
+			path = UnitTests;
 			sourceTree = "<group>";
 		};
 		B4D55A5B3F013FCF65B8EDFC /* Pods */ = {
@@ -545,6 +559,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1DCBBD323AC847C00204934 /* FetchFromSourcesTests.swift in Sources */,
+				B1DCBBD623AC8CD600204934 /* ButtonTapTests.swift in Sources */,
 				B1499DBE23A3B15300DBF121 /* CochleariOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
