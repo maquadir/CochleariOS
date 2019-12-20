@@ -22,7 +22,6 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     var zoomLevel: Float = 2.0
     var selectedPlace: GMSPlace?
     var tappedMarker : GMSMarker?
-    var customInfoWindow : CustomInfoWindow?
     var listbutton: UIButton!
     var List: [Data] = []
     var db: Firestore!
@@ -43,7 +42,6 @@ class ViewController: UIViewController,GMSMapViewDelegate {
            self.mapView.settings.myLocationButton = true
            self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
            self.mapView.isMyLocationEnabled = true
-//           self.view.addSubview(mapView)
             
            //add button
            listbutton.setTitle("List", for: .normal)
@@ -52,9 +50,6 @@ class ViewController: UIViewController,GMSMapViewDelegate {
            listbutton.layer.cornerRadius = 10
            listbutton.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
            listbutton.tag = 1
-//           self.mapView.addSubview(listbutton)
-            
-//           self.mapView.isHidden = true
         }
     }
 
@@ -129,7 +124,6 @@ class ViewController: UIViewController,GMSMapViewDelegate {
        
         //code to add a custom info window for marker
         self.tappedMarker = GMSMarker()
-//        self.customInfoWindow = CustomInfoWindow().loadView()
         self.mapView.delegate = self
         
     }
@@ -181,8 +175,6 @@ class ViewController: UIViewController,GMSMapViewDelegate {
     
         //commented code
 //       let position = tappedMarker?.position
-//     customInfoWindow?.center = mapView.projection.point(for: position!)
-//     customInfoWindow?.center.y -= 100
         
     }
     

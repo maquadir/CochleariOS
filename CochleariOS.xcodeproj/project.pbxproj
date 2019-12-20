@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16601DB508843674E0ABF368 /* Pods_CochleariOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4093B173950669682C81AA6 /* Pods_CochleariOSTests.framework */; };
-		2766F08DF457E3C9BD9F3C5C /* Pods_CochleariOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2DFB007CA51642FC9B9129F /* Pods_CochleariOS.framework */; };
-		A85B203096D2858E33956102 /* Pods_CochleariOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 773CEAEC4CC8A3C48E3EA01F /* Pods_CochleariOSUITests.framework */; };
+		90567519C9E6D8C1832B621D /* Pods_CochleariOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D6C6C4FF93403E55E3F3E1 /* Pods_CochleariOSTests.framework */; };
+		953922ABCBB7D657904D37B2 /* Pods_CochleariOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8291096798C3FB5057E699 /* Pods_CochleariOS.framework */; };
 		B1075B4D23AA52C1001F3B9F /* VCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1075B4C23AA52C1001F3B9F /* VCViewModel.swift */; };
 		B1499DA723A3B15000DBF121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1499DA623A3B15000DBF121 /* AppDelegate.swift */; };
 		B1499DA923A3B15000DBF121 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1499DA823A3B15000DBF121 /* SceneDelegate.swift */; };
@@ -21,11 +20,10 @@
 		B1499DC923A3B15300DBF121 /* CochleariOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1499DC823A3B15300DBF121 /* CochleariOSUITests.swift */; };
 		B1499DD723A3DC2400DBF121 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1499DD623A3DC2400DBF121 /* GoogleService-Info.plist */; };
 		B151B86923A4AF3600D909E7 /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B151B86823A4AF3600D909E7 /* DetailScreen.swift */; };
-		B151B86B23A4B17100D909E7 /* CustomInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B151B86A23A4B17100D909E7 /* CustomInfoWindow.xib */; };
-		B151B86D23A4B20C00D909E7 /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B151B86C23A4B20C00D909E7 /* CustomInfoWindow.swift */; };
 		B151B86F23A5383200D909E7 /* ListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B151B86E23A5383200D909E7 /* ListScreen.swift */; };
 		B151B87323A5C98300D909E7 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B151B87223A5C98300D909E7 /* LocationCell.swift */; };
 		B17FE1EF23A7AAF100851D8D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FE1EE23A7AAF100851D8D /* Data.swift */; };
+		FCCBF34A96ECB20E53F84BA3 /* Pods_CochleariOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036A63C08723E4AEB7006D1E /* Pods_CochleariOSUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12962AB0585B1F363E668D09 /* Pods-CochleariOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOSTests.debug.xcconfig"; path = "Target Support Files/Pods-CochleariOSTests/Pods-CochleariOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4B4E974148941DF654B3E315 /* Pods-CochleariOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOSTests.release.xcconfig"; path = "Target Support Files/Pods-CochleariOSTests/Pods-CochleariOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		4BF63B4B4800AE4DCE242887 /* Pods-CochleariOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOS.release.xcconfig"; path = "Target Support Files/Pods-CochleariOS/Pods-CochleariOS.release.xcconfig"; sourceTree = "<group>"; };
-		773CEAEC4CC8A3C48E3EA01F /* Pods_CochleariOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CochleariOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2DFB007CA51642FC9B9129F /* Pods_CochleariOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CochleariOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		036A63C08723E4AEB7006D1E /* Pods_CochleariOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CochleariOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		060BC3093FA020751D837D70 /* Pods-CochleariOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-CochleariOSUITests/Pods-CochleariOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0AED6C94112C6717E8A7E97D /* Pods-CochleariOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOS.release.xcconfig"; path = "Target Support Files/Pods-CochleariOS/Pods-CochleariOS.release.xcconfig"; sourceTree = "<group>"; };
+		1BF36B140D7EFE1611D7BF73 /* Pods-CochleariOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOSTests.release.xcconfig"; path = "Target Support Files/Pods-CochleariOSTests/Pods-CochleariOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		31D6C6C4FF93403E55E3F3E1 /* Pods_CochleariOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CochleariOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A98CC5BD9D96D91E224BC920 /* Pods-CochleariOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOS.debug.xcconfig"; path = "Target Support Files/Pods-CochleariOS/Pods-CochleariOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B1075B4C23AA52C1001F3B9F /* VCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCViewModel.swift; sourceTree = "<group>"; };
 		B1499DA323A3B15000DBF121 /* CochleariOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CochleariOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1499DA623A3B15000DBF121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,15 +67,12 @@
 		B1499DCA23A3B15300DBF121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1499DD623A3DC2400DBF121 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B151B86823A4AF3600D909E7 /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
-		B151B86A23A4B17100D909E7 /* CustomInfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomInfoWindow.xib; sourceTree = "<group>"; };
-		B151B86C23A4B20C00D909E7 /* CustomInfoWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
 		B151B86E23A5383200D909E7 /* ListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScreen.swift; sourceTree = "<group>"; };
 		B151B87223A5C98300D909E7 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		B17FE1EE23A7AAF100851D8D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		CC24F5B366042BD5F1690A85 /* Pods-CochleariOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOS.debug.xcconfig"; path = "Target Support Files/Pods-CochleariOS/Pods-CochleariOS.debug.xcconfig"; sourceTree = "<group>"; };
-		D4093B173950669682C81AA6 /* Pods_CochleariOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CochleariOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E70C5701A842F643B1383801 /* Pods-CochleariOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOSUITests.release.xcconfig"; path = "Target Support Files/Pods-CochleariOSUITests/Pods-CochleariOSUITests.release.xcconfig"; sourceTree = "<group>"; };
-		F4458ECE21066E4D04841A6E /* Pods-CochleariOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-CochleariOSUITests/Pods-CochleariOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DF8291096798C3FB5057E699 /* Pods_CochleariOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CochleariOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED4CA4658955277BAD169129 /* Pods-CochleariOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOSTests.debug.xcconfig"; path = "Target Support Files/Pods-CochleariOSTests/Pods-CochleariOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F5A4E30089CC73E424D3366E /* Pods-CochleariOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CochleariOSUITests.release.xcconfig"; path = "Target Support Files/Pods-CochleariOSUITests/Pods-CochleariOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2766F08DF457E3C9BD9F3C5C /* Pods_CochleariOS.framework in Frameworks */,
+				953922ABCBB7D657904D37B2 /* Pods_CochleariOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16601DB508843674E0ABF368 /* Pods_CochleariOSTests.framework in Frameworks */,
+				90567519C9E6D8C1832B621D /* Pods_CochleariOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,13 +96,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A85B203096D2858E33956102 /* Pods_CochleariOSUITests.framework in Frameworks */,
+				FCCBF34A96ECB20E53F84BA3 /* Pods_CochleariOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		716FE0B97F663DEEB45EA92E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF8291096798C3FB5057E699 /* Pods_CochleariOS.framework */,
+				31D6C6C4FF93403E55E3F3E1 /* Pods_CochleariOSTests.framework */,
+				036A63C08723E4AEB7006D1E /* Pods_CochleariOSUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B1499D9A23A3B15000DBF121 = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +121,7 @@
 				B1499DC723A3B15300DBF121 /* CochleariOSUITests */,
 				B1499DA423A3B15000DBF121 /* Products */,
 				B4D55A5B3F013FCF65B8EDFC /* Pods */,
-				C898DCB4FDF5C5FCCDC6C80D /* Frameworks */,
+				716FE0B97F663DEEB45EA92E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,8 +191,6 @@
 		B17FE1EC23A7A00500851D8D /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				B151B86A23A4B17100D909E7 /* CustomInfoWindow.xib */,
-				B151B86C23A4B20C00D909E7 /* CustomInfoWindow.swift */,
 				B17FE1EE23A7AAF100851D8D /* Data.swift */,
 			);
 			path = Custom;
@@ -204,24 +208,14 @@
 		B4D55A5B3F013FCF65B8EDFC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CC24F5B366042BD5F1690A85 /* Pods-CochleariOS.debug.xcconfig */,
-				4BF63B4B4800AE4DCE242887 /* Pods-CochleariOS.release.xcconfig */,
-				12962AB0585B1F363E668D09 /* Pods-CochleariOSTests.debug.xcconfig */,
-				4B4E974148941DF654B3E315 /* Pods-CochleariOSTests.release.xcconfig */,
-				F4458ECE21066E4D04841A6E /* Pods-CochleariOSUITests.debug.xcconfig */,
-				E70C5701A842F643B1383801 /* Pods-CochleariOSUITests.release.xcconfig */,
+				A98CC5BD9D96D91E224BC920 /* Pods-CochleariOS.debug.xcconfig */,
+				0AED6C94112C6717E8A7E97D /* Pods-CochleariOS.release.xcconfig */,
+				ED4CA4658955277BAD169129 /* Pods-CochleariOSTests.debug.xcconfig */,
+				1BF36B140D7EFE1611D7BF73 /* Pods-CochleariOSTests.release.xcconfig */,
+				060BC3093FA020751D837D70 /* Pods-CochleariOSUITests.debug.xcconfig */,
+				F5A4E30089CC73E424D3366E /* Pods-CochleariOSUITests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		C898DCB4FDF5C5FCCDC6C80D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A2DFB007CA51642FC9B9129F /* Pods_CochleariOS.framework */,
-				D4093B173950669682C81AA6 /* Pods_CochleariOSTests.framework */,
-				773CEAEC4CC8A3C48E3EA01F /* Pods_CochleariOSUITests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,12 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1499DCD23A3B15300DBF121 /* Build configuration list for PBXNativeTarget "CochleariOS" */;
 			buildPhases = (
-				F05862383E45DBD459C522DA /* [CP] Check Pods Manifest.lock */,
+				9DD1223F14A6FE4E657D04C0 /* [CP] Check Pods Manifest.lock */,
 				B1499D9F23A3B15000DBF121 /* Sources */,
 				B1499DA023A3B15000DBF121 /* Frameworks */,
 				B1499DA123A3B15000DBF121 /* Resources */,
-				EE8E6327595AEA53CC1BD1F3 /* [CP] Copy Pods Resources */,
-				D48FFA46A88F0A84650F5E84 /* [CP] Embed Pods Frameworks */,
+				97CC009781C4B3349A972A64 /* [CP] Embed Pods Frameworks */,
+				C2FD83C311808663A13BCC2E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,10 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1499DD023A3B15300DBF121 /* Build configuration list for PBXNativeTarget "CochleariOSTests" */;
 			buildPhases = (
-				28ACA15AA752538A9BCF1998 /* [CP] Check Pods Manifest.lock */,
+				E3AC87CFE0AD6604E0AD761C /* [CP] Check Pods Manifest.lock */,
 				B1499DB523A3B15300DBF121 /* Sources */,
 				B1499DB623A3B15300DBF121 /* Frameworks */,
 				B1499DB723A3B15300DBF121 /* Resources */,
+				7CFF5A5509BE34AB378EE9B4 /* [CP] Embed Pods Frameworks */,
+				60C20FA27393E88AA1031665 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,10 +266,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1499DD323A3B15300DBF121 /* Build configuration list for PBXNativeTarget "CochleariOSUITests" */;
 			buildPhases = (
-				9EEF3B4A944D85F9152A9B6A /* [CP] Check Pods Manifest.lock */,
+				2413CE5C3B3736E32FD08F27 /* [CP] Check Pods Manifest.lock */,
 				B1499DC023A3B15300DBF121 /* Sources */,
 				B1499DC123A3B15300DBF121 /* Frameworks */,
 				B1499DC223A3B15300DBF121 /* Resources */,
+				E9E172AA4B51488665D60011 /* [CP] Embed Pods Frameworks */,
+				62C318267BA9EFEBD73A468A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -333,7 +331,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B151B86B23A4B17100D909E7 /* CustomInfoWindow.xib in Resources */,
 				B1499DB323A3B15300DBF121 /* LaunchScreen.storyboard in Resources */,
 				B1499DD723A3DC2400DBF121 /* GoogleService-Info.plist in Resources */,
 				B1499DB023A3B15300DBF121 /* Assets.xcassets in Resources */,
@@ -358,29 +355,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		28ACA15AA752538A9BCF1998 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CochleariOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9EEF3B4A944D85F9152A9B6A /* [CP] Check Pods Manifest.lock */ = {
+		2413CE5C3B3736E32FD08F27 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -402,7 +377,58 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D48FFA46A88F0A84650F5E84 /* [CP] Embed Pods Frameworks */ = {
+		60C20FA27393E88AA1031665 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CochleariOSTests/Pods-CochleariOSTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CochleariOSTests/Pods-CochleariOSTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CochleariOSTests/Pods-CochleariOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62C318267BA9EFEBD73A468A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CochleariOSUITests/Pods-CochleariOSUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CochleariOSUITests/Pods-CochleariOSUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CochleariOSUITests/Pods-CochleariOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CFF5A5509BE34AB378EE9B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CochleariOSTests/Pods-CochleariOSTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CochleariOSTests/Pods-CochleariOSTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CochleariOSTests/Pods-CochleariOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97CC009781C4B3349A972A64 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -419,24 +445,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CochleariOS/Pods-CochleariOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EE8E6327595AEA53CC1BD1F3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CochleariOS/Pods-CochleariOS-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CochleariOS/Pods-CochleariOS-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CochleariOS/Pods-CochleariOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F05862383E45DBD459C522DA /* [CP] Check Pods Manifest.lock */ = {
+		9DD1223F14A6FE4E657D04C0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -458,6 +467,62 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C2FD83C311808663A13BCC2E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CochleariOS/Pods-CochleariOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CochleariOS/Pods-CochleariOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CochleariOS/Pods-CochleariOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3AC87CFE0AD6604E0AD761C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CochleariOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9E172AA4B51488665D60011 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CochleariOSUITests/Pods-CochleariOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CochleariOSUITests/Pods-CochleariOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CochleariOSUITests/Pods-CochleariOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -471,7 +536,6 @@
 				B1499DAB23A3B15000DBF121 /* ViewController.swift in Sources */,
 				B1499DA723A3B15000DBF121 /* AppDelegate.swift in Sources */,
 				B151B87323A5C98300D909E7 /* LocationCell.swift in Sources */,
-				B151B86D23A4B20C00D909E7 /* CustomInfoWindow.swift in Sources */,
 				B1499DA923A3B15000DBF121 /* SceneDelegate.swift in Sources */,
 				B17FE1EF23A7AAF100851D8D /* Data.swift in Sources */,
 			);
@@ -531,6 +595,7 @@
 		B1499DCB23A3B15300DBF121 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -579,18 +644,22 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Debug;
 		};
 		B1499DCC23A3B15300DBF121 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -633,19 +702,23 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TVOS_DEPLOYMENT_TARGET = 13.2;
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Release;
 		};
 		B1499DCE23A3B15300DBF121 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC24F5B366042BD5F1690A85 /* Pods-CochleariOS.debug.xcconfig */;
+			baseConfigurationReference = A98CC5BD9D96D91E224BC920 /* Pods-CochleariOS.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S23SD7M6C5;
@@ -658,13 +731,15 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Debug;
 		};
 		B1499DCF23A3B15300DBF121 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BF63B4B4800AE4DCE242887 /* Pods-CochleariOS.release.xcconfig */;
+			baseConfigurationReference = 0AED6C94112C6717E8A7E97D /* Pods-CochleariOS.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S23SD7M6C5;
@@ -677,12 +752,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "Pods/**";
 			};
 			name = Release;
 		};
 		B1499DD123A3B15300DBF121 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12962AB0585B1F363E668D09 /* Pods-CochleariOSTests.debug.xcconfig */;
+			baseConfigurationReference = ED4CA4658955277BAD169129 /* Pods-CochleariOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -705,7 +781,7 @@
 		};
 		B1499DD223A3B15300DBF121 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B4E974148941DF654B3E315 /* Pods-CochleariOSTests.release.xcconfig */;
+			baseConfigurationReference = 1BF36B140D7EFE1611D7BF73 /* Pods-CochleariOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -728,7 +804,7 @@
 		};
 		B1499DD423A3B15300DBF121 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4458ECE21066E4D04841A6E /* Pods-CochleariOSUITests.debug.xcconfig */;
+			baseConfigurationReference = 060BC3093FA020751D837D70 /* Pods-CochleariOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -749,7 +825,7 @@
 		};
 		B1499DD523A3B15300DBF121 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E70C5701A842F643B1383801 /* Pods-CochleariOSUITests.release.xcconfig */;
+			baseConfigurationReference = F5A4E30089CC73E424D3366E /* Pods-CochleariOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
