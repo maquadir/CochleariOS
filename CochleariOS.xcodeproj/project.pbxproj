@@ -121,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				B1499DA523A3B15000DBF121 /* CochleariOS */,
+				B1DCBBD423AC8CB300204934 /* UnitTests */,
 				B1499DBC23A3B15300DBF121 /* CochleariOSTests */,
 				B1499DC723A3B15300DBF121 /* CochleariOSUITests */,
 				B1499DA423A3B15000DBF121 /* Products */,
@@ -142,7 +143,6 @@
 		B1499DA523A3B15000DBF121 /* CochleariOS */ = {
 			isa = PBXGroup;
 			children = (
-				B1DCBBD423AC8CB300204934 /* UnitTests */,
 				B1075B4C23AA52C1001F3B9F /* VCViewModel.swift */,
 				B17FE1ED23A7A06D00851D8D /* Storyboard */,
 				B17FE1EC23A7A00500851D8D /* Custom */,
