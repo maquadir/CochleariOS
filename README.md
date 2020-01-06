@@ -1,4 +1,4 @@
-# CochleariOS
+# Introduction
 An app for a social photography startup. It maintains a list of scenic photo locations around Sydney. The users will see all these default
 locations, plus be able to add their own locations, as well as add notes about each location.
 
